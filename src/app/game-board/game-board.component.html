@@ -1,0 +1,32 @@
+ <!-- game-board.component.html -->
+<div class="top">
+    <!-- <label for="game-size"></label> -->
+    <select id="game-size" [(ngModel)]="gridSize" (change)="onGridSizeChange($event)">
+      <option value="6">6 Cards (3x2)</option>
+      <option value="12">12 Cards (4x3)</option>
+    </select>
+    <button (click)="restartGame()">Restart Game</button>
+</div>
+
+<div class="game-board">
+    
+    <div class="card-grid">
+        <div *ngFor="let card of cards; let i = index">
+          <app-card
+            [cardValue]="card"
+            [isFlipped]="flippedCards.includes(i) || matchedCards.includes(i)"
+            (cardClicked)="cardClicked(i)"
+          ></app-card>
+        </div>
+    </div>
+     
+</div>
+  
+
+<div class="footer-info">
+    <p>Moves: {{ moves }}</p>
+    <p>Misses: {{ misses }}</p>
+    <p>Rounds Played: {{ roundsPlayed }}</p>
+</div>
+  
+  
