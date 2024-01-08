@@ -1,7 +1,7 @@
 /* game-board.component.scss */
 
 .game-board {
-    background-color: rgb(45, 189, 189);
+    background-color: rgb(191, 191, 253);
     max-width: 100%;
     overflow: hidden;
     display: flex;
@@ -14,6 +14,7 @@
     justify-content: center;
     margin-bottom: 10px;
     align-items: center;
+    
   }
   .card-grid {
     display: grid;
@@ -61,6 +62,7 @@
     font-weight: bolder;
     padding: 10px;
     border-radius: 10px;
+  
   }
 
   button{
