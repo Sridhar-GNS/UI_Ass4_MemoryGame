@@ -1,13 +1,11 @@
 
 .card {
     width: 150px;
-    height: 150px;
+    height: 200px;
     perspective: 1000px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    
-    
   }
  
   .card.flipped {
@@ -28,12 +26,9 @@
     width: auto;
     height: auto;
     object-fit: cover;
-    position: absolute;
   }
   .front {
-    background-color: #06030b;
-    object-fit: cover;
-    position: absolute;
+    background-color: #ddd;
   }
   
   .back {
