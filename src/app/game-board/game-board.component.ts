@@ -20,6 +20,7 @@ export class GameBoardComponent implements OnInit {
     this.flippedCards = [];
     this.matchedCards = [];
     this.initializeCards();
+    this.roundsPlayed++;
   }
 
   onGridSizeChange(event: Event): void {
@@ -30,15 +31,6 @@ export class GameBoardComponent implements OnInit {
     this.initializeCards();
   }
 
-  // initializeCards(): void {
-  //   // Generate cards with values
-  //   // For simplicity, using numbers here. You can use any content you want.
-  //   for (let i = 1; i <= this.gridSize / 2; i++) {
-  //     this.cards.push(i, i);
-  //   }
-  //   this.shuffleCards(this.cards);
-  // }
-
   initializeCards(): void {
     const totalCards = this.gridSize / 2;
     for (let i = 1; i <= totalCards; i++) {
@@ -46,7 +38,7 @@ export class GameBoardComponent implements OnInit {
       this.cards.push(cardPath, cardPath);
     }
     this.shuffleCards(this.cards);
-    this.roundsPlayed++;
+    
   }
   
   cardClicked(index: number): void {
@@ -68,18 +60,27 @@ export class GameBoardComponent implements OnInit {
   checkMatch(): void {
     const [firstCard, secondCard] = this.flippedCards;
     if (this.cards[firstCard] === this.cards[secondCard]) {
+    
       this.matchedCards.push(firstCard, secondCard);
+      
     }
     else{this.misses++}
     this.flippedCards = [];
 
   }
+
+
+  
   shuffleCards(cards: any[]): void {
     for (let i = cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [cards[i], cards[j]] = [cards[j], cards[i]];
+      
     }
   }
+
+  
+  
 
 
  

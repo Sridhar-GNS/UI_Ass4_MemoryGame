@@ -1,4 +1,10 @@
  <!-- game-board.component.html -->
+ <div class="title">
+  <h1>
+     Funmoji
+  </h1>
+</div>
+ 
 <div class="top">
     <!-- <label for="game-size"></label> -->
     <select id="game-size" [(ngModel)]="gridSize" (change)="onGridSizeChange($event)">
@@ -28,5 +34,4 @@
     <p>Misses: {{ misses }}</p>
     <p>Rounds Played: {{ roundsPlayed }}</p>
 </div>
-  
   

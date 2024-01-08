@@ -1,14 +1,9 @@
-
 <div class="card" [class.flipped]="isFlipped" (click)="onClick()">
-
-
-    <div class="front">
-        
-    </div>
-    <div class="back">
-      <img [src]="cardValue" alt="Card" /> 
-    </div>
-
-    
+  <div class="front">
+    <img src="../../assets/images/flip.jpg"/>
   </div>
-  
+
+  <div class="back">
+    <img [src]="cardValue" alt="Card" />
+  </div>
+</div>
